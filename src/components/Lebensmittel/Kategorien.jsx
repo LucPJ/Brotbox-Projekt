@@ -24,7 +24,6 @@ export default function Kategorien(){
     const alleKategorien = lebensmittelKategorien.map((item) => {
         
         const keyID= item.sys.id;
-      
         
         return(
             <div key={keyID}>
