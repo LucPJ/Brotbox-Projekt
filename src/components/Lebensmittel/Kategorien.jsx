@@ -13,9 +13,9 @@ export default function Kategorien(){
             .then((entry) => setLebensmittelKategorien(entry.items))
             .catch((err) => console.log(err))
             setIsLoading(false)
-    }, [])
+    }, []);
 
-    console.log(lebensmittelKategorien)
+    //console.log(lebensmittelKategorien)
 
     if (isLoading) {
         return <div>loading...</div>
@@ -27,7 +27,7 @@ export default function Kategorien(){
         
         return(
             <div key={keyID}>
-                <h3>{item.fields.kategorien}</h3>
+                <h2>{item.fields.kategorien}</h2>
                 <div><img src={item.fields.kategorienBild.fields.file.url} alt={item.fields.kategorienBild.fields.title}/></div>
             </div>
             )
