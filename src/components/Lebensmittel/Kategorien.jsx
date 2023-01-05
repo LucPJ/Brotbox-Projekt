@@ -22,8 +22,12 @@ export default function Kategorien(){
     }
 
     const alleKategorien = lebensmittelKategorien.map((item) => {
+        
+        const keyID= item.sys.id;
+      
+        
         return(
-            <div>
+            <div key={keyID}>
                 <h3>{item.fields.kategorien}</h3>
                 <div><img src={item.fields.kategorienBild.fields.file.url} alt={item.fields.kategorienBild.fields.title}/></div>
             </div>

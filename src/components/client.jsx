@@ -1,9 +1,8 @@
 import * as contentful from 'contentful';
+const spaceId = import.meta.env.VITE_CONTENTFUL_SPACE;
+const accessTokenID = import.meta.env.VITE_ACCESS_TOKEN;
 
 export const client = contentful.createClient({
-    //space: process.env.REACT_APP_CONTENTFUL_SPACE,
-    //accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN
-
-    space: 'nam9u7ux6gyj',
-    accessToken: 'pZ6js2Dk3PNK9gdmmvdyJmcNybmBSDOnWp9NQFLskZA',
+    space: spaceId,
+    accessToken: accessTokenID,
 });
