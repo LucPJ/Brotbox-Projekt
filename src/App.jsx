@@ -1,12 +1,18 @@
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
 //import Lebensmittel from './components/Lebensmittel/Kategorien'
 import Lebensmittel from './components/Lebensmittel/Lebensmittel';
+import router from './routing/Router'
 
 function App() {
 
+  //initial lebensmittel fetchen...
+
   return (
     <div className="App">
-      <Lebensmittel />
+      
+        <RouterProvider router={router}/>
+      
     </div>
   )
 }

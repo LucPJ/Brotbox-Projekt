@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {client} from '../client';
+import { getLebensmittel } from '../../controller/FetchLebensmittel';
+
 
 export default function Lebensmittel(){
 
@@ -7,17 +8,16 @@ export default function Lebensmittel(){
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        setIsLoading(true)
-        client.getEntries({ content_type: 'lebensmittel' })
-            .then((entry) => setLebensmittelItems(entry.items))
-            .catch((err) => console.log(err))
-            setIsLoading(false)
+       const data = getLebensmittel()
+        setLebensmittelItems(data)
+   
+            
     }, [])
 
-    console.log(lebensmittelItems)
+
 
    const lebensmittelListe = lebensmittelItems.map((item) => {
-        setIsLoading(true)
+        
         const keyID= item.sys.id;
 
         return(
@@ -33,19 +33,10 @@ export default function Lebensmittel(){
 
     })
     
-    console.log(lebensmittelListe)
-    
 
     if(isLoading){
         return <div>loading...</div>
     }
-
-    const lebensmittelListeKategorie = lebensmittelListe.filter((item) => {
-        return(
-            <li>{item.fields.kategorien}</li>
-        )
-    })
-    console.log(lebensmittelListeKategorie)
 
     return(
         <div>
