@@ -1,15 +1,19 @@
-//hier wird die fetch function erstellt
 import {client} from '../components/client';
 
-export const getLebensmittel =()=>{
+export async function getLebensmittel (contentType){
     
-    let Lebensmittel = 
-    client.getEntries({ content_type: 'lebensmittel' })
-    .then((entry) =>{
-        Lebensmittel = entry
-       
-    })
-    .catch((err) => console.log(err))
+    const data = await client.getEntries({ content_type: contentType });
+    const response = data.items;
 
-    return Lebensmittel
+    return response;
+}
+
+
+export async function getFilteredLebensmittel(kategorie){
+ 
+   const data = await getLebensmittel('lebensmittel');
+    const filtered = data.filter(item => kategorie.replace(/-/g," ").toLowerCase() === item.fields.kategorien.fields.kategorien.replace(/-/g," ").toLowerCase());
+    
+    return filtered;
+
 }

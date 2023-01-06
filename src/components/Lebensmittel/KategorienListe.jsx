@@ -1,21 +1,23 @@
 import React, {useState, useEffect} from 'react';
 import {client} from '../client';
+import KategorieCard from './KategorieCard';
+import { getLebensmittel } from '../../controller/FetchLebensmittel';
 
 export default function Kategorien(){
 
     const [lebensmittelKategorien, setLebensmittelKategorien] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-
-    useEffect(() => {
+    async function getAllLebensmittelData(){
         setIsLoading(true)
-        client.getEntries({ content_type: 'kategorie' })
-            .then((entry) => setLebensmittelKategorien(entry.items))
-            .catch((err) => console.log(err))
-            setIsLoading(false)
-    }, []);
-
-    //console.log(lebensmittelKategorien)
+        const data = await getLebensmittel('kategorie')
+        setLebensmittelKategorien(data)
+        setIsLoading(false)
+    }
+    
+    useEffect(()=>{
+        getAllLebensmittelData()
+    },[])
 
     if (isLoading) {
         return <div>loading...</div>
@@ -26,13 +28,10 @@ export default function Kategorien(){
         const keyID= item.sys.id;
         
         return(
-            <div key={keyID}>
-                <h2>{item.fields.kategorien}</h2>
-                <div><img src={item.fields.kategorienBild.fields.file.url} alt={item.fields.kategorienBild.fields.title}/></div>
-            </div>
+            <KategorieCard title={item.fields.kategorien} imgSrc={item.fields.kategorienBild.fields.file.url} imgAlt={item.fields.kategorienBild.fields.title}/>
             )
     })
-
+    
     return(
         <div>
             <h1>Lebensmittel Kategorien</h1>
