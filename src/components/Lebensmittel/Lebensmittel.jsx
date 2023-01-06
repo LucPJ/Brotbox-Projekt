@@ -4,7 +4,6 @@ import Navigation from '../Navigation';
 
 import LebensmittelCard from './LebensmittelCard';
 
-
 export default function Lebensmittel(){
 
     const [lebensmittelItems, setLebensmittelItems] = useState([]);
