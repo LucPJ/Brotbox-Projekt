@@ -33,8 +33,7 @@ export default function Lebensmittel(){
             <LebensmittelCard key={keyID} title={item.fields.lebensmittel} imgSrc={item.fields.lebensmittelBild.fields.lebensmittelBild.fields.file.url} alt={item.fields.lebensmittelBild.fields.bildname} kategorie={item.fields.kategorien.fields.kategorien}/>
         )
 
-    })
-    
+    }) 
 
     return(
         <div>
