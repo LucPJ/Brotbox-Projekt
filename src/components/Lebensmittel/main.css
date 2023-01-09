@@ -1,0 +1,57 @@
+.kategorien{
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  margin: 2em 0 3em 5em;
+  gap: 20px;
+  justify-items: center;
+}
+
+.kategorie-card{
+    width: 25em;
+    height: 90%;
+    margin: 1em auto 3em; 
+}
+
+.kategorie-card h3{
+    text-align: center;
+    padding: 0.5em;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.kategorie-card-image{
+    width: 100%;
+    height: 280px;
+    border-radius: 5px;
+}
+
+.lebensmittel{
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    margin: 2em 0 3em 2em;
+    gap: 10px;
+    justify-items: center;
+}
+
+.lebensmittel-card{
+    width: 10em;
+    height: 60%;
+    margin: 0.5em auto; 
+}
+
+.lebnensmittel-card-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.lebensmittel-card h3{
+    text-align: center;
+    padding: 0.2em;
+}
