@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from "react-router-dom";
 import { getFilteredLebensmittel } from '../../controller/FetchLebensmittel';
-
+import KategorieFilteredCard from './KategorieFilteredCards';
+import './filteredKategorie.css';
 
 export default function KategorieFiltered(){
     
@@ -26,18 +27,15 @@ export default function KategorieFiltered(){
     }
     const filteredListItems = filteredList.map(item=>{
         return(
-            <h1>
-            {item.fields.lebensmittel}
-            </h1>
+            <KategorieFilteredCard title={item.fields.lebensmittel} imgSrc={item.fields.lebensmittelBild.fields.lebensmittelBild.fields.file.url} alt={item.fields.lebensmittelBild.fields.bildname}/>
         )
     })
 
     //Fallback setzen, falls es keine ergebnisse zu der kategorie gibt...
 
     return (
-        <>
-        <h1>filterd kategorie {kategorie}</h1>
-       {filteredListItems}
-        </>
+        <div className='filtered-kategorie'>
+        {filteredListItems}
+        </div>
     )
 }

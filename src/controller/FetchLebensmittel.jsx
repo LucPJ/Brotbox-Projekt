@@ -11,7 +11,7 @@ export async function getLebensmittel (contentType){
 
 export async function getFilteredLebensmittel(kategorie){
  
-   const data = await getLebensmittel('lebensmittel');
+    const data = await getLebensmittel('lebensmittel');
     const filtered = data.filter(item => kategorie.replace(/-/g," ").toLowerCase() === item.fields.kategorien.fields.kategorien.replace(/-/g," ").toLowerCase());
     
     return filtered;

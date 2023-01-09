@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { getLebensmittel } from '../../controller/FetchLebensmittel';
 import Navigation from '../Navigation';
+import './main.css';
 
 import LebensmittelCard from './LebensmittelCard';
-
 
 export default function Lebensmittel(){
 
@@ -33,13 +33,11 @@ export default function Lebensmittel(){
             <LebensmittelCard key={keyID} title={item.fields.lebensmittel} imgSrc={item.fields.lebensmittelBild.fields.lebensmittelBild.fields.file.url} alt={item.fields.lebensmittelBild.fields.bildname} kategorie={item.fields.kategorien.fields.kategorien}/>
         )
 
-    })
-    
+    }) 
 
     return(
-        <div>
-            
-            <h1>Lebensmittel</h1>
+        
+        <div className='lebensmittel'>            
             {lebensmittelListe}
         </div>
     )

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {client} from '../client';
 import KategorieCard from './KategorieCard';
 import { getLebensmittel } from '../../controller/FetchLebensmittel';
+import './main.css';
 
 export default function Kategorien(){
 
@@ -33,8 +34,7 @@ export default function Kategorien(){
     })
     
     return(
-        <div>
-            <h1>Lebensmittel Kategorien</h1>
+        <div className='kategorien'>
             {alleKategorien}
         </div>
     )
