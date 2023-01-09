@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { getLebensmittel } from '../../controller/FetchLebensmittel';
 import Navigation from '../Navigation';
+import './main.css';
 
 import LebensmittelCard from './LebensmittelCard';
 
@@ -35,9 +36,8 @@ export default function Lebensmittel(){
     }) 
 
     return(
-        <div>
-            
-            <h1>Lebensmittel</h1>
+        
+        <div className='lebensmittel'>            
             {lebensmittelListe}
         </div>
     )

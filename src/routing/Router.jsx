@@ -15,8 +15,8 @@ import LebensmittelDetails from "../components/Lebensmittel/LebensmittelDetails"
    const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Homepage/>}>
-         <Route path="/lebensmittel" element={<Lebensmittel />} />
-         <Route path="/lebensmittel/:lebensmittel" element={<LebensmittelDetails />} />
+        <Route path="/lebensmittel" element={<Lebensmittel />} />
+        <Route path="/lebensmittel/:lebensmittel" element={<LebensmittelDetails />} />
         <Route path="/kategorien" element={<KategorienListe />} />
         <Route path="/kategorien/:kategorie" element={<KategorieFiltered />} />
         <Route path="*" element={<h1 >Error Page</h1>} />
