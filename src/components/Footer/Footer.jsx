@@ -24,7 +24,7 @@ export default function Footer(){
         return <div>loading...</div>
     }
 
-    console.log(footerItems)
+    //console.log(footerItems)
 
     const footer = footerItems.map((item) => {
         

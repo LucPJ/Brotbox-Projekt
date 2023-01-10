@@ -29,7 +29,7 @@ export default function Kategorien(){
         const keyID= item.sys.id;
         
         return(
-            <KategorieCard title={item.fields.kategorien} imgSrc={item.fields.kategorienBild.fields.file.url} imgAlt={item.fields.kategorienBild.fields.title}/>
+            <KategorieCard key={keyID} title={item.fields.kategorien} imgSrc={item.fields.kategorienBild.fields.file.url} imgAlt={item.fields.kategorienBild.fields.title}/>
             )
     })
     

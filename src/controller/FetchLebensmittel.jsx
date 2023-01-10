@@ -15,5 +15,17 @@ export async function getFilteredLebensmittel(kategorie){
     const filtered = data.filter(item => kategorie.replace(/-/g," ").toLowerCase() === item.fields.kategorien.fields.kategorien.replace(/-/g," ").toLowerCase());
     
     return filtered;
+}
 
+export function addLebensmittelToList(data){
+
+        const requestLebensmittel = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    }
+    
+    fetch('http://localhost:3000/lebensmittel', requestLebensmittel)
+        .then((res) => res.JSON())
+        .then((data)=> console.log(data))
 }
