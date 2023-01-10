@@ -25,9 +25,13 @@ export default function KategorieFiltered(){
     if(isLoading){
         return(<h1>isLoading...</h1>)
     }
+
     const filteredListItems = filteredList.map(item=>{
+        
+        const keyID= item.sys.id;
+
         return(
-            <KategorieFilteredCard title={item.fields.lebensmittel} imgSrc={item.fields.lebensmittelBild.fields.lebensmittelBild.fields.file.url} alt={item.fields.lebensmittelBild.fields.bildname}/>
+            <KategorieFilteredCard key={keyID} title={item.fields.lebensmittel} imgSrc={item.fields.lebensmittelBild.fields.lebensmittelBild.fields.file.url} alt={item.fields.lebensmittelBild.fields.bildname}/>
         )
     })
 
