@@ -9,7 +9,7 @@
 }
 
 .nav{
-    background-color: var(--color-tertiary);
+    background-color: var(--color-secondary);
     display: flex;
     width: 100%;
     min-height: 30px;
