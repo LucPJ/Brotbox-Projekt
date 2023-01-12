@@ -55,3 +55,26 @@
     font-weight: 500;
     font-size: 1.25em;
 }
+
+.lebensmittel-list-card{
+    width: 25em;
+    height: 50vh;
+    background-color: var(--color-secondary);  
+    color: var(--color-light);  
+    border-radius: 5px;
+    position: fixed;
+    right: 0;
+    top: 220px;
+}
+
+.lebensmittel-list-card h3{
+    padding: 1em;
+}
+
+.lebensmittel-list{
+    padding: 2px 1.5em;
+    margin: auto 2em;
+    font-weight: 500;
+    font-size: 1em;    
+    padding-inline-start: 0;
+}
