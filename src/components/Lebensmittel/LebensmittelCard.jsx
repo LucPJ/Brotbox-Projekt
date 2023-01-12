@@ -9,6 +9,7 @@ export default function LebensmittelCard({lebensmittelId, kalorien, title, imgSr
     const selectedLebensmittel = {
         id: lebensmittelId,
         title: title,
+        image: imgSrc,
         kalorien: kalorien,
         kategorie: kategorie
     }
@@ -23,16 +24,18 @@ export default function LebensmittelCard({lebensmittelId, kalorien, title, imgSr
     
     return(
         <div className='lebensmittel-card'>
-{/*             <Link to={customLink}>
- */}                <h3>{title}</h3>
+            {/* <Link to={customLink}> */}
+                <h3>{title}</h3>
                 <img 
                     src={imgSrc} 
                     alt={imgAlt}
                     className="lebnensmittel-card-img"
                 />
-                <h4>{kalorien} kcal</h4>
-                <button onClick={addLebensmittelItem}>hinzufügen</button>
-{/*             </Link>
- */}        </div>
+                <div className='lebensmittel-card-info'>
+                    <p>{kalorien} kcal pro 100g</p>
+                    <button className="btn" onClick={addLebensmittelItem}>hinzufügen</button>
+                </div>
+                {/* </Link> */}
+        </div>
     )
 }

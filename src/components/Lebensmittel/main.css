@@ -45,6 +45,7 @@ a:link {
     margin: 0.5em auto;
     border: solid 0.5px var(--color-secondary);
     border-radius: 5px; 
+    display: block;
 }
 
 .lebnensmittel-card-img{
@@ -57,4 +58,27 @@ a:link {
     text-align: center;
     padding: 0.2em;
     font-size: 1em;
+}
+
+.lebensmittel-card-info{
+    display: flex;
+
+}
+
+.lebensmittel-card-info p{
+    font-size: 12px;
+    padding: 4px;
+    font-family: 'Cabin', sans-serif;
+}
+
+.btn {
+    align-items: flex-end;
+    background-color: var(--color-tertiary);
+    border: none;
+    color: var(--color-light);
+    padding: 8px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 5px;
 }
