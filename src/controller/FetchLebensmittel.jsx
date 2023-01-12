@@ -17,15 +17,29 @@ export async function getFilteredLebensmittel(kategorie){
     return filtered;
 }
 
-export function addLebensmittelToList(data){
+export async function addLebensmittelToList(data){
 
-        const requestLebensmittel = {
+    const requestLebensmittel = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
     }
-    
-    fetch('http://localhost:3000/lebensmittel', requestLebensmittel)
-        .then((res) => res.JSON())
-        .then((data)=> console.log(data))
+
+    const fetchLebensmittel = 
+        await fetch('http://localhost:3000/lebensmittel', requestLebensmittel)
+                .then((res) => res.json())
+                .then((data)=> console.log(data))
+        
+    return fetchLebensmittel                                           
 }
+
+export async function createdLebensmittelListe(){
+
+    const fetchLebensmittelListe = 
+        await fetch('http://localhost:3000/lebensmittel')
+            .then((res) => res.json())
+            .then((data) => console.log(data))
+        
+    return fetchLebensmittelListe
+}
+

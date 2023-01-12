@@ -1,5 +1,6 @@
 .filtered-kategorie{
     max-width: 1000px;
+    width: 800px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
